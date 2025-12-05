@@ -7,7 +7,7 @@
 
 	
 
-	<title>Exam System</title>
+	<title>IMM SULBAR</title>
 </head>
 
 <body class=" bg-surface">
