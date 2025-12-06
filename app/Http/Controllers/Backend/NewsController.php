@@ -146,7 +146,7 @@ class NewsController extends Controller
         // Hapus data dari database
         $news->delete();
 
-        return redirect()->route('news.index')->with('success', 'Artikel berhasil dihapus!');
+        return redirect()->route('news.index')->with('success', 'Pengurus berhasil dihapus!');
 
     }
 }
