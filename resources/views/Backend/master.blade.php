@@ -5,6 +5,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 	@include('Backend.Partial.head')
 
+	<!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('admin/assets/images/imm.png') }}">
 	
 
 	<title>IMM SULBAR</title>

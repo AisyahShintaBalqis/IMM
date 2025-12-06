@@ -42,6 +42,14 @@
         </a>
       </li>
 
+      <li class="sidebar-item ">
+        <a class="sidebar-link gap-3 py-2.5 my-1 text-base   flex items-center relative  rounded-md text-gray-500  w-full
+        {{Request::is('member*') ? 'active':''}}" 
+        href="{{route('member.index')}}">
+          <i class="ti ti-hierarchy-2 ps-2 text-2xl"></i> <span>Pengurus</span>
+        </a>
+      </li>
+
       
 
     </ul>
