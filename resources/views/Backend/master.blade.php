@@ -46,7 +46,7 @@
 				</div>                   
 					<footer>
 						<p class="text-base text-gray-400 font-normal p-3 text-center">
-						&#169; 2025 Exam System
+						&#169; 2025 IMM Sulbar
 						</p>
 					</footer>
 					</div>
