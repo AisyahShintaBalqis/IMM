@@ -50,15 +50,29 @@
                     <td class="aksi text-center align-middle" style="height: 50px;">
                     <div class="inline-flex items-center gap-2 h-full">
 
+
+                        <a href="{{ route('news.show', $item->id) }}" 
+                        class="text-green-600 hover:text-green-800" 
+                        title="Detail">
+                            <i class="ti ti-eye"></i>
+                        </a>
+
                         <a href="{{ route('news.edit', $item->id) }}" 
                         class="text-blue-600 hover:text-blue-800" title="Edit">
                         <i class="ti ti-edit"></i>
                         </a>
 
-                        <form action="" method="POST" onsubmit="return confirm('Yakin ingin menghapus ujian ini?');" class="inline">
+                        <form action="{{ route('news.destroy', $item->id) }}" 
+                            method="POST" 
+                            onsubmit="return confirm('Yakin ingin menghapus artikel ini?');" 
+                            class="inline">
+
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn-delete text-red-600 hover:text-red-800" data-name="">
+
+                            <button type="submit" 
+                                    class="btn-delete text-red-600 hover:text-red-800" 
+                                    data-name="{{ $item->title }}">
                                 <i class="ti ti-trash" style="color: #dc2626;"></i>
                             </button>
                         </form>

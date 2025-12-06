@@ -18,7 +18,7 @@
             <!-- Konten -->
             <div class="mb-4">
                 <label class="block font-semibold">Isi Konten</label>
-                <textarea id="content" name="content" rows="6" class="w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ old('content') }}</textarea>
+                <textarea id="content" name="content" rows="6" class="ckeditor w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ old('content') }}</textarea>
             @error('content') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
 
@@ -48,13 +48,5 @@
     </div>
 </div>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#content' ) )
-        .catch( error => {
-            console.error( error );
-        });
-</script>
 @endsection

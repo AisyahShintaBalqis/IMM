@@ -65,6 +65,18 @@
 	<script src="{{asset('admin/assets/node_modules/apexcharts/dist/apexcharts.min.js')}}"></script>
     <script src="{{ asset('admin/assets/js/dashboard.js')}}"></script>
 
+	<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		document.querySelectorAll('.ckeditor').forEach((el) => {
+			ClassicEditor
+				.create(el)
+				.catch(error => { console.error(error); });
+		});
+	});
+	</script>
+
 
 	<script>
     document.querySelectorAll('.btn-delete').forEach(button => {

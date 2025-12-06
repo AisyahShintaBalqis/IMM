@@ -23,7 +23,7 @@
             <div>
                 <label class="block text-sm font-medium text-gray-700">Isi Konten</label>
                 <textarea id="content" name="content" rows="6"
-                    class="w-full rounded-md border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="ckeditor w-full rounded-md border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required>{{ old('content', $news->content) }}</textarea>
                 @error('content') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
@@ -49,7 +49,7 @@
                 <select name="status"
                     class="w-full rounded-md border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="draft" {{ old('status', $news->status) == 'draft' ? 'selected' : '' }}>Draft</option>
-                    <option value="publish" {{ old('status', $news->status) == 'publish' ? 'selected' : '' }}>Publish</option>
+                    <option value="published" {{ old('status', $news->status) == 'published' ? 'selected' : '' }}>Publish</option>
                 </select>
                 @error('status') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
@@ -66,14 +66,5 @@
     </div>
 </div>
 
-{{-- CKEditor --}}
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#content'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
 @endsection
