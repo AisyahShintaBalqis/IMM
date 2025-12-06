@@ -5,8 +5,8 @@
 <div class="container mx-auto px-4">
     <div class="card-body ">  
         <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-semibold">Daftar Artikel</h2>
-            <a href="{{ route('news.create') }}"
+            <h2 class="text-xl font-semibold">Daftar Halaman</h2>
+            <a href="{{ route('page.create') }}"
             class="items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700">
             <i class="ti ti-plus text-xl"></i>
             </a>
@@ -24,23 +24,23 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($news as $item)
+                @forelse ($page as $pages)
                 <tr>
-                    <td class="border px-4 py-2">{{ $item->title }}</td>
-                    <td class="border px-4 py-2">{{ $item->slug }}</td>
+                    <td class="border px-4 py-2">{{ $pages->title }}</td>
+                    <td class="border px-4 py-2">{{ $pages->slug }}</td>
                     <td class="border px-4 py-2">
-                        {!! Str::limit(strip_tags($item->content), 60) !!}
+                        {!! Str::limit(strip_tags($pages->content), 60) !!}
                     </td>
                     <td class="border px-4 py-2">
-                        @if($item->thumbnail)
-                            <img src="{{ asset('storage/' . $item->thumbnail) }}" 
+                        @if($pages->thumbnail)
+                            <img src="{{ asset('storage/' . $pages->thumbnail) }}" 
                                 class="w-16 h-16 rounded object-cover">
                         @else
                             <span class="text-gray-400">-</span>
                         @endif
                     </td>
                     <td class="border px-4 py-2">
-                        @if ($item->status === 'published')
+                        @if ($pages->status === 'published')
                             <span class="text-green-600 font-semibold">Publish</span>
                         @else
                             <span class="text-red-600 font-semibold">Draft</span>
@@ -51,18 +51,18 @@
                     <div class="inline-flex items-center gap-2 h-full">
 
 
-                        <a href="{{ route('news.show', $item->id) }}" 
+                        <a href="{{ route('page.show', $pages->id) }}" 
                         class="text-green-600 hover:text-green-800" 
                         title="Detail">
                             <i class="ti ti-eye"></i>
                         </a>
 
-                        <a href="{{ route('news.edit', $item->id) }}" 
+                        <a href="{{ route('page.edit', $pages->id) }}" 
                         class="text-blue-600 hover:text-blue-800" title="Edit">
                         <i class="ti ti-edit"></i>
                         </a>
 
-                        <form action="{{ route('news.destroy', $item->id) }}" 
+                        <form action="{{ route('page.destroy', $pages->id) }}" 
                             method="POST" 
                             onsubmit="return confirm('Yakin ingin menghapus artikel ini?');" 
                             class="inline">
@@ -72,7 +72,7 @@
 
                             <button type="submit" 
                                     class="btn-delete text-red-600 hover:text-red-800" 
-                                    data-name="{{ $item->title }}">
+                                    data-name="{{ $pages->title }}">
                                 <i class="ti ti-trash" style="color: #dc2626;"></i>
                             </button>
                         </form>
@@ -81,14 +81,14 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" class="border px-4 py-2 text-center">Belum ada Artikel.</td>
+                    <td colspan="6" class="border px-4 py-2 text-center">Belum ada Halaman.</td>
                 </tr>
                 @endforelse
             </tbody>
         </table>
 
         <div class="mt-4">
-            {{ $news->links() }}
+            {{ $page->links() }}
         </div>
     </div>
 </div>
