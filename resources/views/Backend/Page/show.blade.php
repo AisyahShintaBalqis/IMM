@@ -31,7 +31,7 @@
 
         <div class="mt-6">
             <a href="{{ route('page.index') }}" 
-            class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-gray-700">
             Kembali
             </a>
         </div>
