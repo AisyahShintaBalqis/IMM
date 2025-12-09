@@ -50,6 +50,22 @@
         </a>
       </li>
 
+      <li class="sidebar-item ">
+        <a class="sidebar-link gap-3 py-2.5 my-1 text-base   flex items-center relative  rounded-md text-gray-500  w-full
+        {{Request::is('event*') ? 'active':''}}" 
+        href="{{route('event.index')}}">
+          <i class="ti ti-activity ps-2 text-2xl"></i> <span>Kegiatan</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item ">
+        <a class="sidebar-link gap-3 py-2.5 my-1 text-base   flex items-center relative  rounded-md text-gray-500  w-full
+        {{Request::is('galeri*') ? 'active':''}}" 
+        href="{{route('galeri.index')}}">
+          <i class="ti ti-photo ps-2 text-2xl"></i> <span>Dokumentasi</span>
+        </a>
+      </li>
+
       
 
     </ul>
