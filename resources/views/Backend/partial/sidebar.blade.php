@@ -36,6 +36,14 @@
 
       <li class="sidebar-item ">
         <a class="sidebar-link gap-3 py-2.5 my-1 text-base   flex items-center relative  rounded-md text-gray-500  w-full
+        {{Request::is('commission*') ? 'active':''}}" 
+        href="{{route('commission.index')}}">
+          <i class="ti ti-building ps-2 text-2xl"></i> <span>Komisariat</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item ">
+        <a class="sidebar-link gap-3 py-2.5 my-1 text-base   flex items-center relative  rounded-md text-gray-500  w-full
         {{Request::is('news*') ? 'active':''}}" 
         href="{{route('news.index')}}">
           <i class="ti ti-file-text ps-2 text-2xl"></i> <span>Artikel</span>

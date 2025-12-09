@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\BranchController;
+use App\Http\Controllers\Backend\CommissionController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MemberController;
@@ -24,3 +25,4 @@ Route::resource('member', MemberController::class);
 Route::resource('event', EventController::class);
 Route::resource('galeri', GalleryController::class);
 Route::resource('branch', BranchController::class);
+Route::resource('commission', CommissionController::class);
